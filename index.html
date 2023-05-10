@@ -25,18 +25,35 @@
           CRMTORGI.RU
         </span>
       </div>
-      <form class="popup__form" id="login-form">
-        <fieldset class="popup__form-fieldset">
-          <input type="text" placeholder="Логин" class="popup__form-input popup__form-input--error" id="login-input">
-        </fieldset>
-        <fieldset class="popup__form-fieldset">
-          <input type="password" placeholder="Пароль" class="popup__form-input" id="pass-input">
-        </fieldset>
-        <div class="popup__form-menu">
-          <button class="popup__form-btn" id="login-submit-btn">Войти</button>
-          <button class="popup__form-btn" id="regitser-go-btn" type="button">Зарегистрироваться</button>
-        </div>
-      </form>
+      <div class="popup__form-group">
+        <form class="popup__form popup__form--active" id="login-form">
+          <fieldset class="popup__form-fieldset">
+            <input type="text" placeholder="Логин" class="popup__form-input popup__form-input--error" id="login-input">
+          </fieldset>
+          <fieldset class="popup__form-fieldset">
+            <input type="password" placeholder="Пароль" class="popup__form-input" id="login-pass-input">
+          </fieldset>
+          <div class="popup__form-menu">
+            <button class="popup__form-btn" id="login-submit-btn">Войти</button>
+            <button class="popup__form-btn" id="regitser-go-btn" type="button">Зарегистрироваться</button>
+          </div>
+        </form>
+        <form class="popup__form" id="register-form">
+          <fieldset class="popup__form-fieldset">
+            <input type="text" placeholder="Логин" class="popup__form-input popup__form-input--error"
+              id="register-login-input">
+          </fieldset>
+          <fieldset class="popup__form-fieldset popup__form-fieldset--even">
+            <input type="password" placeholder="Пароль" class="popup__form-input" id="register-pass-input">
+            <input type="password" placeholder="Повторите пароль" class="popup__form-input"
+              id="repete-register-pass-input">
+          </fieldset>
+          <div class="popup__form-menu popup__form-menu--reverse">
+            <button class="popup__form-btn" id="regitser-submit-btn" type="submit">Зарегистрироваться</button>
+            <button class="popup__form-btn" id="go-login-btn">Назад</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
   <header class="header">
@@ -422,9 +439,9 @@
       </div>
     </section>
   </main>
-  <script src="./scripts/fullpage.js"></script>
-  <script src="./scripts/popup.js"></script>
-  <script src="./scripts/fullpageInit.js"></script>
+  <script defer src="./scripts/fullpage.js"></script>
+  <script defer src="./scripts/fullpageInit.js"></script>
+  <script defer src="./scripts/popup.js"></script>
 </body>
 
 </html>
