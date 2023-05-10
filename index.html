@@ -10,6 +10,35 @@
 </head>
 
 <body>
+  <div class="popup-window popup-window--hidden" id="login-window">
+    <div class="popup popup-window__popup" id="login-popup">
+      <button class="popup__close-btn" type="button">
+
+      </button>
+      <div class="popup__logo-holder">
+        <div class="popup__logo">
+          <svg width="47" height="45">
+            <use xlink:href="./assets/img/popup-logo.svg#popup-logo"></use>
+          </svg>
+        </div>
+        <span class="popup__logo-company-name">
+          CRMTORGI.RU
+        </span>
+      </div>
+      <form class="popup__form" id="login-form">
+        <fieldset class="popup__form-fieldset">
+          <input type="text" placeholder="Логин" class="popup__form-input popup__form-input--error" id="login-input">
+        </fieldset>
+        <fieldset class="popup__form-fieldset">
+          <input type="password" placeholder="Пароль" class="popup__form-input" id="pass-input">
+        </fieldset>
+        <div class="popup__form-menu">
+          <button class="popup__form-btn" id="login-submit-btn">Войти</button>
+          <button class="popup__form-btn" id="regitser-go-btn" type="button">Зарегистрироваться</button>
+        </div>
+      </form>
+    </div>
+  </div>
   <header class="header">
     <div class="wrapper header__wrapper">
       <a href="#" class="logo-link header__logo-link">
@@ -27,16 +56,17 @@
         </div>
       </a>
       <nav class="header__nav">
-        <a href="#" class="header__nav-link">Возможности</a>
-        <a href="#" class="header__nav-link">Для кого</a>
-        <a href="#" class="header__nav-link">Тарифы</a>
-        <a href="#" class="header__nav-link">Поддержка</a>
-        <a href="#" class="header__nav-link">Контакты</a>
+        <a href="#promo" class="header__nav-link">Главная</a>
+        <a href="#offers" class="header__nav-link">Возможности</a>
+        <a href="#who" class="header__nav-link">Для кого</a>
+        <a href="#rate" class="header__nav-link">Тарифы</a>
+        <a href="#support" class="header__nav-link">Поддержка</a>
+        <a href="#contacts" class="header__nav-link">Контакты</a>
       </nav>
       <div class="header__menu">
-        <a href="#" class="header__btn" id="header__login-btn">
+        <button class="header__btn" id="header__login-btn">
           Войти
-        </a>
+        </button>
         <a href="#" class="header__btn header__btn--dark" id="header__register-btn">
           Регистрация
         </a>
@@ -44,7 +74,7 @@
     </div>
   </header>
   <main class="main" id="fullpage">
-    <section class="section promo">
+    <section class="section promo" data-anchor="promo">
       <div class="wrapper promo__wrapper">
         <div class="promo__main-content">
           <h1 class="heading promo__heading">
@@ -64,7 +94,7 @@
         </div>
       </div>
     </section>
-    <section class="section banner">
+    <section class="section banner" data-anchor="banner">
       <div class="wrapper banner__wrapper">
         <p class="banner__text">
           <span class="banner__text--bold">CRM по сопровождению тендеров</span> может помочь организациям управлять
@@ -80,7 +110,7 @@
         </p>
       </div>
     </section>
-    <section class="section offers ">
+    <section class="section offers " data-anchor="offers">
       <div class="wrapper offers__wrapper">
         <h2 class="subheading offers__heading">Возможности</h2>
         <div class="offers-list offers__offers-list">
@@ -154,7 +184,7 @@
         </a>
       </div>
     </section>
-    <section class="section who ">
+    <section class="section who " data-anchor="who">
       <div class="wrapper who__wrapper">
         <h2 class="subheading who__heading">Для кого</h2>
         <div class="who__list who-list">
@@ -196,7 +226,7 @@
         </div>
       </div>
     </section>
-    <section class="section rate">
+    <section class="section rate" data-anchor="rate">
       <div class="wrapper rate__wrapper">
         <h2 class="subheading rate__heading">
           Тарифы
@@ -295,7 +325,7 @@
         </div>
       </div>
     </section>
-    <section class="section support ">
+    <section class="section support" data-anchor="support">
       <div class="wrapper support__wrapper">
         <h2 class="subheading support__heading">
           Поддержка
@@ -348,7 +378,7 @@
         </div>
       </div>
     </section>
-    <section class="section contacts ">
+    <section class="section contacts" data-anchor="contacts">
       <div class="wrapper contacts__wrapper">
         <h2 class="subheading contacts__heading">
           Контактная информация
@@ -393,6 +423,7 @@
     </section>
   </main>
   <script src="./scripts/fullpage.js"></script>
+  <script src="./scripts/popup.js"></script>
   <script src="./scripts/fullpageInit.js"></script>
 </body>
 
