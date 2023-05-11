@@ -1,10 +1,15 @@
 const registerForm = document.querySelector("#register-form");
 const loginForm = document.querySelector("#login-form");
+const repeatPasswordForm = document.querySelector("#forgot-password-form");
+
 const loginPopupWindow = document.querySelector("#login-window");
 const loginPopup = document.querySelector("#login-popup");
 const toggleLoginPopupBtn = document.querySelector("#header__login-btn");
 const toggleRegisterPopupBtn = document.querySelector("#header__register-btn");
 const closePopupBtns = document.querySelectorAll(".popup__close-btn");
+
+const goRepeatPasswordPopupBtn = document.querySelector("#go-repeat-password-btn");
+const repeatPasswordGoBackBtn = document.querySelector("#repeat-password-go-btn");
 const goRegisterPopupBtn = document.querySelector("#regitser-go-btn");
 const goLoginPopupBtn = document.querySelector("#go-login-btn");
 
@@ -37,10 +42,18 @@ function closePopupByClickOnEsc(e) {
   }
 }
 
+function resetActivityForm() {
+  document.querySelector(".popup__form--active").classList.remove("popup__form--active");
+}
+
+function setActiveForm(form) {
+  form.classList.add("popup__form--active");
+}
+
 toggleRegisterPopupBtn.addEventListener("click", () => {
   openPopup(loginPopupWindow, "popup-window--hidden");
-  document.querySelector(".popup__form--active").classList.remove("popup__form--active");
-  registerForm.classList.add("popup__form--active");
+  resetActivityForm();
+  setActiveForm(registerForm);
 });
 
 closePopupBtns.forEach((closeBtn) => {
@@ -51,16 +64,26 @@ closePopupBtns.forEach((closeBtn) => {
 
 toggleLoginPopupBtn.addEventListener("click", () => {
   openPopup(loginPopupWindow, "popup-window--hidden");
-  document.querySelector(".popup__form--active").classList.remove("popup__form--active");
-  loginForm.classList.add("popup__form--active");
+  resetActivityForm();
+  setActiveForm(loginForm);
 });
 
 goRegisterPopupBtn.addEventListener("click", () => {
-  document.querySelector(".popup__form--active").classList.remove("popup__form--active");
-  registerForm.classList.add("popup__form--active");
+  resetActivityForm();
+  setActiveForm(registerForm);
 });
 
 goLoginPopupBtn.addEventListener("click", () => {
-  document.querySelector(".popup__form--active").classList.remove("popup__form--active");
-  loginForm.classList.add("popup__form--active");
+  resetActivityForm();
+  setActiveForm(loginForm);
+});
+
+goRepeatPasswordPopupBtn.addEventListener("click", () => {
+  resetActivityForm();
+  setActiveForm(repeatPasswordForm);
+});
+
+repeatPasswordGoBackBtn.addEventListener("click", () => {
+  resetActivityForm();
+  setActiveForm(loginForm);
 });

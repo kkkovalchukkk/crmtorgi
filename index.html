@@ -26,32 +26,65 @@
         </span>
       </div>
       <div class="popup__form-group">
-        <form class="popup__form popup__form--active" id="login-form">
+        <form class="popup__form" id="forgot-password-form">
           <fieldset class="popup__form-fieldset">
-            <input type="text" placeholder="Логин" class="popup__form-input popup__form-input--error" id="login-input">
+            <input placeholder="Логин или E-mail" type="text" placeholder="" class="popup__form-input"
+              id="repeat-password-input">
+          </fieldset>
+          <div class="popup__form-menu popup__form-menu--reverse">
+            <button class="popup__form-btn" id="forgot-password-submit-btn" type="submit">Восстановить пароль</button>
+            <button class="popup__form-btn" id="repeat-password-go-btn" type="button">Назад</button>
+          </div>
+        </form>
+        <form class="popup__form  popup__form--active" id="login-form">
+          <fieldset class="popup__form-fieldset">
+            <input type="text" placeholder="Логин" class="popup__form-input " id="login-input">
           </fieldset>
           <fieldset class="popup__form-fieldset">
             <input type="password" placeholder="Пароль" class="popup__form-input" id="login-pass-input">
           </fieldset>
           <div class="popup__form-menu">
             <button class="popup__form-btn" id="login-submit-btn" type="submit">Войти</button>
-            <button class="popup__form-btn" id="regitser-go-btn" type="button">Зарегистрироваться</button>
+            <button class="popup__form-btn" id="regitser-go-btn" type="button">Регистрация</button>
+          </div>
+          <div class="popup__row">
+            <div class="popup__form-error popup__form-error--hidden">Неверный логин или пароль</div>
+            <button class="popup__form-link" id="go-repeat-password-btn" type="button">Забыли пароль?</button>
           </div>
         </form>
         <form class="popup__form" id="register-form">
           <fieldset class="popup__form-fieldset">
-            <input type="text" placeholder="Логин" class="popup__form-input popup__form-input--error"
-              id="register-login-input">
+            <input type="email" placeholder="Почта" class="popup__form-input " id="register-email-input">
           </fieldset>
-          <fieldset class="popup__form-fieldset popup__form-fieldset--even">
-            <input type="password" placeholder="Пароль" class="popup__form-input" id="register-pass-input">
-            <input type="password" placeholder="Повторите пароль" class="popup__form-input"
-              id="repete-register-pass-input">
-          </fieldset>
+
+          <div class="popup__form-fieldset popup__form-fieldset--even">
+            <fieldset class="popup__form-fieldset">
+              <input type="text" placeholder="Имя" class="popup__form-input " id="register-name-input">
+            </fieldset>
+            <fieldset class="popup__form-fieldset">
+              <input type="tel" placeholder="+7" class="popup__form-input popup__form-tel-input"
+                id="register-tel-input">
+            </fieldset>
+
+          </div>
           <div class="popup__form-menu popup__form-menu--reverse">
             <button class="popup__form-btn" id="regitser-submit-btn" type="submit">Зарегистрироваться</button>
             <button class="popup__form-btn" id="go-login-btn" type="button">Назад</button>
           </div>
+          <fieldset class="popup__form-fieldset">
+            <label class="popup__form-label">
+              <div class="popup__form-label-text">
+                Используя сервис CRMTorgi, <br> вы соглашаетесь с условиями <br>
+                <a href="#" class="popup__form-link">
+                  договора‑оферты.
+                </a>
+              </div>
+              <input type="checkbox" required name="rights" class="popup__form-checkbox-input">
+              <div class="popup__form-checkbox">
+
+              </div>
+            </label>
+          </fieldset>
         </form>
       </div>
     </div>
@@ -439,9 +472,13 @@
       </div>
     </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"
+    type="text/javascript"></script>
   <script defer src="./scripts/fullpage.js"></script>
   <script defer src="./scripts/fullpageInit.js"></script>
   <script defer src="./scripts/popup.js"></script>
+  <script src="./scripts/mask.js"></script>
 </body>
 
 </html>
